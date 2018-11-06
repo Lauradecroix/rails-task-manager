@@ -1,7 +1,15 @@
+<div class="container">
   <h2><%= @task.title %></h2>
   <p><%= @task.details %></p>
-  <p><%= @task.completed %></p>
 
-<%= link_to "Edit", edit_path%>
-<%= link_to "Destroy", destroy_path, method: :delete, data: { confirm: "Are you sure?" }%>
-<%= link_to "Back to list", tasks_path%>
+  <div class="custom-control custom-checkbox">
+  <%= check_box("task", "completed") %>
+  <label class="form-check-label" for="inlineCheckbox">Completed</label>
+  </div>
+
+  <div>
+  <%= link_to "Edit", edit_path, class: 'btn btn-primary'%>
+  <%= link_to "Destroy", destroy_path, class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?" }%>
+  <%= link_to "Back to list", tasks_path%>
+  </div>
+</div>
